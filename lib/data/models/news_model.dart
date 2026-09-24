@@ -1,3 +1,5 @@
+import 'news_catalog.dart';
+
 class NewsModel {
   final int id;
   final String title;
@@ -6,6 +8,8 @@ class NewsModel {
   final int views;
   final int likes;
   final int dislikes;
+  final String category;
+
   NewsModel({
     required this.id,
     required this.title,
@@ -14,7 +18,9 @@ class NewsModel {
     required this.views,
     required this.likes,
     required this.dislikes,
-  });
+    String? category,
+  }) : category = category ?? inferCategory(tags);
+
   factory NewsModel.fromJson(Map<String, dynamic> json) {
     return NewsModel(
       id: json['id'] ?? 0,
@@ -24,6 +30,19 @@ class NewsModel {
       views: json['views'] ?? 0,
       likes: json['reactions']?['likes'] ?? 0,
       dislikes: json['reactions']?['dislikes'] ?? 0,
+      category: json['category'] as String?,
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'body': body,
+      'tags': tags,
+      'views': views,
+      'reactions': {'likes': likes, 'dislikes': dislikes},
+      'category': category,
+    };
   }
 }

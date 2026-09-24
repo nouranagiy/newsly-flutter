@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "186838896313",
+    "project_id": "news-ee4c3",
+    "storage_bucket": "news-ee4c3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186838896313:android:622ddd0386d65f9d0f5568",
+        "android_client_info": {
+          "package_name": "com.example.newsly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPlLYIXRdj9CZQhpNNpstYvnGY72Njcwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
